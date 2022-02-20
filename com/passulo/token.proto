@@ -1,0 +1,22 @@
+syntax = "proto3";
+option java_package = "com.passulo";
+
+import "google/protobuf/timestamp.proto";
+
+package com.passulo.v1;
+
+message Token {
+  string id = 1;
+  string firstName = 2;
+  string middleName = 3;
+  string lastName = 4;
+  string gender = 5;
+  string number = 6;
+  string status = 7;
+  string company = 8;
+  string email = 9;
+  string telephone = 10;
+  string association = 11;
+  google.protobuf.Timestamp validUntil = 12;
+  google.protobuf.Timestamp memberSince = 13;
+}
