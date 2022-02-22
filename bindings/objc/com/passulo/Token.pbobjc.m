@@ -13,6 +13,8 @@
  #import "GPBProtocolBuffers_RuntimeSupport.h"
 #endif
 
+#import <stdatomic.h>
+
 #import "com/passulo/Token.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
@@ -69,11 +71,11 @@ static GPBFileDescriptor *TokenRoot_FileDescriptor(void) {
 
 typedef struct Token__storage_ {
   uint32_t _has_storage_[1];
+  Token_Gender gender;
   NSString *id_p;
   NSString *firstName;
   NSString *middleName;
   NSString *lastName;
-  NSString *gender;
   NSString *number;
   NSString *status;
   NSString *company;
@@ -128,12 +130,12 @@ typedef struct Token__storage_ {
       },
       {
         .name = "gender",
-        .dataTypeSpecific.clazz = Nil,
+        .dataTypeSpecific.enumDescFunc = Token_Gender_EnumDescriptor,
         .number = Token_FieldNumber_Gender,
         .hasIndex = 4,
         .offset = (uint32_t)offsetof(Token__storage_, gender),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldClearHasIvarOnZero),
-        .dataType = GPBDataTypeString,
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeEnum,
       },
       {
         .name = "number",
@@ -230,6 +232,59 @@ typedef struct Token__storage_ {
 }
 
 @end
+
+int32_t Token_Gender_RawValue(Token *message) {
+  GPBDescriptor *descriptor = [Token descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:Token_FieldNumber_Gender];
+  return GPBGetMessageRawEnumField(message, field);
+}
+
+void SetToken_Gender_RawValue(Token *message, int32_t value) {
+  GPBDescriptor *descriptor = [Token descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:Token_FieldNumber_Gender];
+  GPBSetMessageRawEnumField(message, field, value);
+}
+
+#pragma mark - Enum Token_Gender
+
+GPBEnumDescriptor *Token_Gender_EnumDescriptor(void) {
+  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
+  if (!descriptor) {
+    static const char *valueNames =
+        "Undefined\000Female\000Male\000Diverse\000";
+    static const int32_t values[] = {
+        Token_Gender_Undefined,
+        Token_Gender_Female,
+        Token_Gender_Male,
+        Token_Gender_Diverse,
+    };
+    static const char *extraTextFormatInfo = "\004\000)\000\001&\000\002$\000\003\'\000";
+    GPBEnumDescriptor *worker =
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(Token_Gender)
+                                       valueNames:valueNames
+                                           values:values
+                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
+                                     enumVerifier:Token_Gender_IsValidValue
+                              extraTextFormatInfo:extraTextFormatInfo];
+    GPBEnumDescriptor *expected = nil;
+    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
+      [worker release];
+    }
+  }
+  return descriptor;
+}
+
+BOOL Token_Gender_IsValidValue(int32_t value__) {
+  switch (value__) {
+    case Token_Gender_Undefined:
+    case Token_Gender_Female:
+    case Token_Gender_Male:
+    case Token_Gender_Diverse:
+      return YES;
+    default:
+      return NO;
+  }
+}
 
 
 #pragma clang diagnostic pop

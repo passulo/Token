@@ -1,16 +1,17 @@
 syntax = "proto3";
 option java_package = "com.passulo";
+option go_package = "github.com/passulo/Token";
 
 import "google/protobuf/timestamp.proto";
 
 package com.passulo.v1;
 
 message Token {
-  string id = 1;
+  string id = 1; // identifier for this token only
   string firstName = 2;
   string middleName = 3;
   string lastName = 4;
-  string gender = 5;
+  Gender gender = 5;
   string number = 6;
   string status = 7;
   string company = 8;
@@ -19,4 +20,11 @@ message Token {
   string association = 11;
   google.protobuf.Timestamp validUntil = 12;
   google.protobuf.Timestamp memberSince = 13;
+
+  enum Gender {
+    undefined = 0;
+    female = 1;
+    male = 2;
+    diverse = 3;
+  }
 }

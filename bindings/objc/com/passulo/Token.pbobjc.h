@@ -31,6 +31,29 @@ CF_EXTERN_C_BEGIN
 
 NS_ASSUME_NONNULL_BEGIN
 
+#pragma mark - Enum Token_Gender
+
+typedef GPB_ENUM(Token_Gender) {
+  /**
+   * Value used if any message's field encounters a value that is not defined
+   * by this enum. The message will also have C functions to get/set the rawValue
+   * of the field.
+   **/
+  Token_Gender_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  Token_Gender_Undefined = 0,
+  Token_Gender_Female = 1,
+  Token_Gender_Male = 2,
+  Token_Gender_Diverse = 3,
+};
+
+GPBEnumDescriptor *Token_Gender_EnumDescriptor(void);
+
+/**
+ * Checks to see if the given value is defined by the enum or was not known at
+ * the time this source was generated.
+ **/
+BOOL Token_Gender_IsValidValue(int32_t value);
+
 #pragma mark - TokenRoot
 
 /**
@@ -66,6 +89,7 @@ typedef GPB_ENUM(Token_FieldNumber) {
 
 GPB_FINAL @interface Token : GPBMessage
 
+/** identifier for this token only */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *firstName;
@@ -74,7 +98,7 @@ GPB_FINAL @interface Token : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *lastName;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *gender;
+@property(nonatomic, readwrite) Token_Gender gender;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *number;
 
@@ -97,6 +121,18 @@ GPB_FINAL @interface Token : GPBMessage
 @property(nonatomic, readwrite) BOOL hasMemberSince;
 
 @end
+
+/**
+ * Fetches the raw value of a @c Token's @c gender property, even
+ * if the value was not defined by the enum at the time the code was generated.
+ **/
+int32_t Token_Gender_RawValue(Token *message);
+/**
+ * Sets the raw value of an @c Token's @c gender property, allowing
+ * it to be set to a value that was not defined by the enum at the time the code
+ * was generated.
+ **/
+void SetToken_Gender_RawValue(Token *message, int32_t value);
 
 NS_ASSUME_NONNULL_END
 

@@ -19,11 +19,19 @@ public final class TokenOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * identifier for this token only
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * identifier for this token only
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -67,16 +75,15 @@ public final class TokenOuterClass {
         getLastNameBytes();
 
     /**
-     * <code>string gender = 5;</code>
+     * <code>.com.passulo.v1.Token.Gender gender = 5;</code>
+     * @return The enum numeric value on the wire for gender.
+     */
+    int getGenderValue();
+    /**
+     * <code>.com.passulo.v1.Token.Gender gender = 5;</code>
      * @return The gender.
      */
-    java.lang.String getGender();
-    /**
-     * <code>string gender = 5;</code>
-     * @return The bytes for gender.
-     */
-    com.google.protobuf.ByteString
-        getGenderBytes();
+    com.passulo.TokenOuterClass.Token.Gender getGender();
 
     /**
      * <code>string number = 6;</code>
@@ -197,7 +204,7 @@ public final class TokenOuterClass {
       firstName_ = "";
       middleName_ = "";
       lastName_ = "";
-      gender_ = "";
+      gender_ = 0;
       number_ = "";
       status_ = "";
       company_ = "";
@@ -260,10 +267,10 @@ public final class TokenOuterClass {
               lastName_ = s;
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 40: {
+              int rawValue = input.readEnum();
 
-              gender_ = s;
+              gender_ = rawValue;
               break;
             }
             case 50: {
@@ -360,9 +367,139 @@ public final class TokenOuterClass {
               com.passulo.TokenOuterClass.Token.class, com.passulo.TokenOuterClass.Token.Builder.class);
     }
 
+    /**
+     * Protobuf enum {@code com.passulo.v1.Token.Gender}
+     */
+    public enum Gender
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>undefined = 0;</code>
+       */
+      undefined(0),
+      /**
+       * <code>female = 1;</code>
+       */
+      female(1),
+      /**
+       * <code>male = 2;</code>
+       */
+      male(2),
+      /**
+       * <code>diverse = 3;</code>
+       */
+      diverse(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>undefined = 0;</code>
+       */
+      public static final int undefined_VALUE = 0;
+      /**
+       * <code>female = 1;</code>
+       */
+      public static final int female_VALUE = 1;
+      /**
+       * <code>male = 2;</code>
+       */
+      public static final int male_VALUE = 2;
+      /**
+       * <code>diverse = 3;</code>
+       */
+      public static final int diverse_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Gender valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Gender forNumber(int value) {
+        switch (value) {
+          case 0: return undefined;
+          case 1: return female;
+          case 2: return male;
+          case 3: return diverse;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Gender>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Gender> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Gender>() {
+              public Gender findValueByNumber(int number) {
+                return Gender.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.passulo.TokenOuterClass.Token.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Gender[] VALUES = values();
+
+      public static Gender valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Gender(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:com.passulo.v1.Token.Gender)
+    }
+
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * identifier for this token only
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
@@ -380,6 +517,10 @@ public final class TokenOuterClass {
       }
     }
     /**
+     * <pre>
+     * identifier for this token only
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -513,41 +654,22 @@ public final class TokenOuterClass {
     }
 
     public static final int GENDER_FIELD_NUMBER = 5;
-    private volatile java.lang.Object gender_;
+    private int gender_;
     /**
-     * <code>string gender = 5;</code>
-     * @return The gender.
+     * <code>.com.passulo.v1.Token.Gender gender = 5;</code>
+     * @return The enum numeric value on the wire for gender.
      */
-    @java.lang.Override
-    public java.lang.String getGender() {
-      java.lang.Object ref = gender_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        gender_ = s;
-        return s;
-      }
+    @java.lang.Override public int getGenderValue() {
+      return gender_;
     }
     /**
-     * <code>string gender = 5;</code>
-     * @return The bytes for gender.
+     * <code>.com.passulo.v1.Token.Gender gender = 5;</code>
+     * @return The gender.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getGenderBytes() {
-      java.lang.Object ref = gender_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        gender_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.passulo.TokenOuterClass.Token.Gender getGender() {
+      @SuppressWarnings("deprecation")
+      com.passulo.TokenOuterClass.Token.Gender result = com.passulo.TokenOuterClass.Token.Gender.valueOf(gender_);
+      return result == null ? com.passulo.TokenOuterClass.Token.Gender.UNRECOGNIZED : result;
     }
 
     public static final int NUMBER_FIELD_NUMBER = 6;
@@ -856,8 +978,8 @@ public final class TokenOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, lastName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, gender_);
+      if (gender_ != com.passulo.TokenOuterClass.Token.Gender.undefined.getNumber()) {
+        output.writeEnum(5, gender_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(number_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, number_);
@@ -904,8 +1026,9 @@ public final class TokenOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, lastName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, gender_);
+      if (gender_ != com.passulo.TokenOuterClass.Token.Gender.undefined.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, gender_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(number_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, number_);
@@ -956,8 +1079,7 @@ public final class TokenOuterClass {
           .equals(other.getMiddleName())) return false;
       if (!getLastName()
           .equals(other.getLastName())) return false;
-      if (!getGender()
-          .equals(other.getGender())) return false;
+      if (gender_ != other.gender_) return false;
       if (!getNumber()
           .equals(other.getNumber())) return false;
       if (!getStatus()
@@ -1000,7 +1122,7 @@ public final class TokenOuterClass {
       hash = (37 * hash) + LASTNAME_FIELD_NUMBER;
       hash = (53 * hash) + getLastName().hashCode();
       hash = (37 * hash) + GENDER_FIELD_NUMBER;
-      hash = (53 * hash) + getGender().hashCode();
+      hash = (53 * hash) + gender_;
       hash = (37 * hash) + NUMBER_FIELD_NUMBER;
       hash = (53 * hash) + getNumber().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -1162,7 +1284,7 @@ public final class TokenOuterClass {
 
         lastName_ = "";
 
-        gender_ = "";
+        gender_ = 0;
 
         number_ = "";
 
@@ -1299,9 +1421,8 @@ public final class TokenOuterClass {
           lastName_ = other.lastName_;
           onChanged();
         }
-        if (!other.getGender().isEmpty()) {
-          gender_ = other.gender_;
-          onChanged();
+        if (other.gender_ != 0) {
+          setGenderValue(other.getGenderValue());
         }
         if (!other.getNumber().isEmpty()) {
           number_ = other.number_;
@@ -1364,6 +1485,10 @@ public final class TokenOuterClass {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * identifier for this token only
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The id.
        */
@@ -1380,6 +1505,10 @@ public final class TokenOuterClass {
         }
       }
       /**
+       * <pre>
+       * identifier for this token only
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The bytes for id.
        */
@@ -1397,6 +1526,10 @@ public final class TokenOuterClass {
         }
       }
       /**
+       * <pre>
+       * identifier for this token only
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -1412,6 +1545,10 @@ public final class TokenOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * identifier for this token only
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return This builder for chaining.
        */
@@ -1422,6 +1559,10 @@ public final class TokenOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * identifier for this token only
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -1666,78 +1807,56 @@ public final class TokenOuterClass {
         return this;
       }
 
-      private java.lang.Object gender_ = "";
+      private int gender_ = 0;
       /**
-       * <code>string gender = 5;</code>
-       * @return The gender.
+       * <code>.com.passulo.v1.Token.Gender gender = 5;</code>
+       * @return The enum numeric value on the wire for gender.
        */
-      public java.lang.String getGender() {
-        java.lang.Object ref = gender_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          gender_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getGenderValue() {
+        return gender_;
       }
       /**
-       * <code>string gender = 5;</code>
-       * @return The bytes for gender.
-       */
-      public com.google.protobuf.ByteString
-          getGenderBytes() {
-        java.lang.Object ref = gender_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          gender_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string gender = 5;</code>
-       * @param value The gender to set.
+       * <code>.com.passulo.v1.Token.Gender gender = 5;</code>
+       * @param value The enum numeric value on the wire for gender to set.
        * @return This builder for chaining.
        */
-      public Builder setGender(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setGenderValue(int value) {
+        
         gender_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string gender = 5;</code>
+       * <code>.com.passulo.v1.Token.Gender gender = 5;</code>
+       * @return The gender.
+       */
+      @java.lang.Override
+      public com.passulo.TokenOuterClass.Token.Gender getGender() {
+        @SuppressWarnings("deprecation")
+        com.passulo.TokenOuterClass.Token.Gender result = com.passulo.TokenOuterClass.Token.Gender.valueOf(gender_);
+        return result == null ? com.passulo.TokenOuterClass.Token.Gender.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.com.passulo.v1.Token.Gender gender = 5;</code>
+       * @param value The gender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGender(com.passulo.TokenOuterClass.Token.Gender value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        gender_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.passulo.v1.Token.Gender gender = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearGender() {
         
-        gender_ = getDefaultInstance().getGender();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string gender = 5;</code>
-       * @param value The bytes for gender to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGenderBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        gender_ = value;
+        gender_ = 0;
         onChanged();
         return this;
       }
@@ -2503,15 +2622,18 @@ public final class TokenOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027com/passulo/token.proto\022\016com.passulo.v" +
-      "1\032\037google/protobuf/timestamp.proto\"\245\002\n\005T" +
+      "1\032\037google/protobuf/timestamp.proto\"\377\002\n\005T" +
       "oken\022\n\n\002id\030\001 \001(\t\022\021\n\tfirstName\030\002 \001(\t\022\022\n\nm" +
-      "iddleName\030\003 \001(\t\022\020\n\010lastName\030\004 \001(\t\022\016\n\006gen" +
-      "der\030\005 \001(\t\022\016\n\006number\030\006 \001(\t\022\016\n\006status\030\007 \001(" +
-      "\t\022\017\n\007company\030\010 \001(\t\022\r\n\005email\030\t \001(\t\022\021\n\ttel" +
-      "ephone\030\n \001(\t\022\023\n\013association\030\013 \001(\t\022.\n\nval" +
-      "idUntil\030\014 \001(\0132\032.google.protobuf.Timestam" +
-      "p\022/\n\013memberSince\030\r \001(\0132\032.google.protobuf" +
-      ".TimestampB\r\n\013com.passulob\006proto3"
+      "iddleName\030\003 \001(\t\022\020\n\010lastName\030\004 \001(\t\022,\n\006gen" +
+      "der\030\005 \001(\0162\034.com.passulo.v1.Token.Gender\022" +
+      "\016\n\006number\030\006 \001(\t\022\016\n\006status\030\007 \001(\t\022\017\n\007compa" +
+      "ny\030\010 \001(\t\022\r\n\005email\030\t \001(\t\022\021\n\ttelephone\030\n \001" +
+      "(\t\022\023\n\013association\030\013 \001(\t\022.\n\nvalidUntil\030\014 " +
+      "\001(\0132\032.google.protobuf.Timestamp\022/\n\013membe" +
+      "rSince\030\r \001(\0132\032.google.protobuf.Timestamp" +
+      "\":\n\006Gender\022\r\n\tundefined\020\000\022\n\n\006female\020\001\022\010\n" +
+      "\004male\020\002\022\013\n\007diverse\020\003B\'\n\013com.passuloZ\030git" +
+      "hub.com/passulo/Tokenb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

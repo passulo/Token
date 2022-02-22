@@ -12,6 +12,7 @@
 // @ts-nocheck
 
 goog.provide('proto.com.passulo.v1.Token');
+goog.provide('proto.com.passulo.v1.Token.Gender');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -75,7 +76,7 @@ proto.com.passulo.v1.Token.toObject = function(includeInstance, msg) {
     firstname: jspb.Message.getFieldWithDefault(msg, 2, ""),
     middlename: jspb.Message.getFieldWithDefault(msg, 3, ""),
     lastname: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    gender: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    gender: jspb.Message.getFieldWithDefault(msg, 5, 0),
     number: jspb.Message.getFieldWithDefault(msg, 6, ""),
     status: jspb.Message.getFieldWithDefault(msg, 7, ""),
     company: jspb.Message.getFieldWithDefault(msg, 8, ""),
@@ -137,7 +138,7 @@ proto.com.passulo.v1.Token.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLastname(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {!proto.com.passulo.v1.Token.Gender} */ (reader.readEnum());
       msg.setGender(value);
       break;
     case 6:
@@ -232,8 +233,8 @@ proto.com.passulo.v1.Token.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getGender();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0.0) {
+    writer.writeEnum(
       5,
       f
     );
@@ -298,6 +299,16 @@ proto.com.passulo.v1.Token.serializeBinaryToWriter = function(message, writer) {
   }
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.com.passulo.v1.Token.Gender = {
+  UNDEFINED: 0,
+  FEMALE: 1,
+  MALE: 2,
+  DIVERSE: 3
+};
 
 /**
  * optional string id = 1;
@@ -372,20 +383,20 @@ proto.com.passulo.v1.Token.prototype.setLastname = function(value) {
 
 
 /**
- * optional string gender = 5;
- * @return {string}
+ * optional Gender gender = 5;
+ * @return {!proto.com.passulo.v1.Token.Gender}
  */
 proto.com.passulo.v1.Token.prototype.getGender = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {!proto.com.passulo.v1.Token.Gender} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {!proto.com.passulo.v1.Token.Gender} value
  * @return {!proto.com.passulo.v1.Token} returns this
  */
 proto.com.passulo.v1.Token.prototype.setGender = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 

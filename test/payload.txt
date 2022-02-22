@@ -1,4 +1,4 @@
-id: "9361aa7a-8e86-44aa-830f-f17c132ce7c2"
+id: "qFfR8WqLA8"
 company: "Technische Universiteit Eindhoven"
 middleName: ""
 status: "Gold"
@@ -6,9 +6,12 @@ email: "lange@eindhoven.nl"
 number: "432324"
 firstName: "Tanja"
 telephone: "+31 (0) 40 247 4764"
-gender: "f"
+gender: female
 association: "Hamburg@Work"
 lastName: "Lange"
-validUntil: {
+validUntil {
 seconds: 1672531199
+}
+memberSince {
+seconds: 978307200
 }

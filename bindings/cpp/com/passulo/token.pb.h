@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include <google/protobuf/timestamp.pb.h>
 // @@protoc_insertion_point(includes)
@@ -70,6 +71,33 @@ namespace com {
 namespace passulo {
 namespace v1 {
 
+enum Token_Gender : int {
+  Token_Gender_undefined = 0,
+  Token_Gender_female = 1,
+  Token_Gender_male = 2,
+  Token_Gender_diverse = 3,
+  Token_Gender_Token_Gender_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  Token_Gender_Token_Gender_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool Token_Gender_IsValid(int value);
+constexpr Token_Gender Token_Gender_Gender_MIN = Token_Gender_undefined;
+constexpr Token_Gender Token_Gender_Gender_MAX = Token_Gender_diverse;
+constexpr int Token_Gender_Gender_ARRAYSIZE = Token_Gender_Gender_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Token_Gender_descriptor();
+template<typename T>
+inline const std::string& Token_Gender_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, Token_Gender>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function Token_Gender_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    Token_Gender_descriptor(), enum_t_value);
+}
+inline bool Token_Gender_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Token_Gender* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Token_Gender>(
+    Token_Gender_descriptor(), name, value);
+}
 // ===================================================================
 
 class Token final :
@@ -191,6 +219,40 @@ class Token final :
 
   // nested types ----------------------------------------------------
 
+  typedef Token_Gender Gender;
+  static constexpr Gender undefined =
+    Token_Gender_undefined;
+  static constexpr Gender female =
+    Token_Gender_female;
+  static constexpr Gender male =
+    Token_Gender_male;
+  static constexpr Gender diverse =
+    Token_Gender_diverse;
+  static inline bool Gender_IsValid(int value) {
+    return Token_Gender_IsValid(value);
+  }
+  static constexpr Gender Gender_MIN =
+    Token_Gender_Gender_MIN;
+  static constexpr Gender Gender_MAX =
+    Token_Gender_Gender_MAX;
+  static constexpr int Gender_ARRAYSIZE =
+    Token_Gender_Gender_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  Gender_descriptor() {
+    return Token_Gender_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& Gender_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, Gender>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function Gender_Name.");
+    return Token_Gender_Name(enum_t_value);
+  }
+  static inline bool Gender_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      Gender* value) {
+    return Token_Gender_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   enum : int {
@@ -198,7 +260,6 @@ class Token final :
     kFirstNameFieldNumber = 2,
     kMiddleNameFieldNumber = 3,
     kLastNameFieldNumber = 4,
-    kGenderFieldNumber = 5,
     kNumberFieldNumber = 6,
     kStatusFieldNumber = 7,
     kCompanyFieldNumber = 8,
@@ -207,6 +268,7 @@ class Token final :
     kAssociationFieldNumber = 11,
     kValidUntilFieldNumber = 12,
     kMemberSinceFieldNumber = 13,
+    kGenderFieldNumber = 5,
   };
   // string id = 1;
   void clear_id();
@@ -262,20 +324,6 @@ class Token final :
   const std::string& _internal_lastname() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_lastname(const std::string& value);
   std::string* _internal_mutable_lastname();
-  public:
-
-  // string gender = 5;
-  void clear_gender();
-  const std::string& gender() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_gender(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_gender();
-  PROTOBUF_NODISCARD std::string* release_gender();
-  void set_allocated_gender(std::string* gender);
-  private:
-  const std::string& _internal_gender() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_gender(const std::string& value);
-  std::string* _internal_mutable_gender();
   public:
 
   // string number = 6;
@@ -398,6 +446,15 @@ class Token final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* membersince);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_membersince();
 
+  // .com.passulo.v1.Token.Gender gender = 5;
+  void clear_gender();
+  ::com::passulo::v1::Token_Gender gender() const;
+  void set_gender(::com::passulo::v1::Token_Gender value);
+  private:
+  ::com::passulo::v1::Token_Gender _internal_gender() const;
+  void _internal_set_gender(::com::passulo::v1::Token_Gender value);
+  public:
+
   // @@protoc_insertion_point(class_scope:com.passulo.v1.Token)
  private:
   class _Internal;
@@ -409,7 +466,6 @@ class Token final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr firstname_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr middlename_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr lastname_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr gender_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr number_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr company_;
@@ -418,6 +474,7 @@ class Token final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr association_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* validuntil_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* membersince_;
+  int gender_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_com_2fpassulo_2ftoken_2eproto;
 };
@@ -636,55 +693,24 @@ inline void Token::set_allocated_lastname(std::string* lastname) {
   // @@protoc_insertion_point(field_set_allocated:com.passulo.v1.Token.lastName)
 }
 
-// string gender = 5;
+// .com.passulo.v1.Token.Gender gender = 5;
 inline void Token::clear_gender() {
-  gender_.ClearToEmpty();
+  gender_ = 0;
 }
-inline const std::string& Token::gender() const {
+inline ::com::passulo::v1::Token_Gender Token::_internal_gender() const {
+  return static_cast< ::com::passulo::v1::Token_Gender >(gender_);
+}
+inline ::com::passulo::v1::Token_Gender Token::gender() const {
   // @@protoc_insertion_point(field_get:com.passulo.v1.Token.gender)
   return _internal_gender();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Token::set_gender(ArgT0&& arg0, ArgT... args) {
- 
- gender_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void Token::_internal_set_gender(::com::passulo::v1::Token_Gender value) {
+  
+  gender_ = value;
+}
+inline void Token::set_gender(::com::passulo::v1::Token_Gender value) {
+  _internal_set_gender(value);
   // @@protoc_insertion_point(field_set:com.passulo.v1.Token.gender)
-}
-inline std::string* Token::mutable_gender() {
-  std::string* _s = _internal_mutable_gender();
-  // @@protoc_insertion_point(field_mutable:com.passulo.v1.Token.gender)
-  return _s;
-}
-inline const std::string& Token::_internal_gender() const {
-  return gender_.Get();
-}
-inline void Token::_internal_set_gender(const std::string& value) {
-  
-  gender_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Token::_internal_mutable_gender() {
-  
-  return gender_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Token::release_gender() {
-  // @@protoc_insertion_point(field_release:com.passulo.v1.Token.gender)
-  return gender_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Token::set_allocated_gender(std::string* gender) {
-  if (gender != nullptr) {
-    
-  } else {
-    
-  }
-  gender_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), gender,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (gender_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    gender_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:com.passulo.v1.Token.gender)
 }
 
 // string number = 6;
@@ -1174,6 +1200,16 @@ inline void Token::set_allocated_membersince(::PROTOBUF_NAMESPACE_ID::Timestamp*
 }  // namespace v1
 }  // namespace passulo
 }  // namespace com
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::com::passulo::v1::Token_Gender> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::com::passulo::v1::Token_Gender>() {
+  return ::com::passulo::v1::Token_Gender_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

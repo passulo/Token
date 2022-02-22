@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class Token extends \Google\Protobuf\Internal\Message
 {
     /**
+     * identifier for this token only
+     *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
@@ -30,9 +32,9 @@ class Token extends \Google\Protobuf\Internal\Message
      */
     protected $lastName = '';
     /**
-     * Generated from protobuf field <code>string gender = 5;</code>
+     * Generated from protobuf field <code>.com.passulo.v1.Token.Gender gender = 5;</code>
      */
-    protected $gender = '';
+    protected $gender = 0;
     /**
      * Generated from protobuf field <code>string number = 6;</code>
      */
@@ -73,10 +75,11 @@ class Token extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *           identifier for this token only
      *     @type string $firstName
      *     @type string $middleName
      *     @type string $lastName
-     *     @type string $gender
+     *     @type int $gender
      *     @type string $number
      *     @type string $status
      *     @type string $company
@@ -93,6 +96,8 @@ class Token extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * identifier for this token only
+     *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
      */
@@ -102,6 +107,8 @@ class Token extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * identifier for this token only
+     *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
      * @return $this
@@ -181,8 +188,8 @@ class Token extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string gender = 5;</code>
-     * @return string
+     * Generated from protobuf field <code>.com.passulo.v1.Token.Gender gender = 5;</code>
+     * @return int
      */
     public function getGender()
     {
@@ -190,13 +197,13 @@ class Token extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string gender = 5;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.com.passulo.v1.Token.Gender gender = 5;</code>
+     * @param int $var
      * @return $this
      */
     public function setGender($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkEnum($var, \Com\Passulo\V1\Token\Gender::class);
         $this->gender = $var;
 
         return $this;

@@ -25,7 +25,6 @@ constexpr Token::Token(
   , firstname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , middlename_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , lastname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , gender_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , company_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -33,7 +32,9 @@ constexpr Token::Token(
   , telephone_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , association_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , validuntil_(nullptr)
-  , membersince_(nullptr){}
+  , membersince_(nullptr)
+  , gender_(0)
+{}
 struct TokenDefaultTypeInternal {
   constexpr TokenDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -47,7 +48,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TokenDefaultTypeInternal _Token
 }  // namespace passulo
 }  // namespace com
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_com_2fpassulo_2ftoken_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_com_2fpassulo_2ftoken_2eproto = nullptr;
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_com_2fpassulo_2ftoken_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_com_2fpassulo_2ftoken_2eproto = nullptr;
 
 const uint32_t TableStruct_com_2fpassulo_2ftoken_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -81,22 +82,25 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_com_2fpassulo_2ftoken_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\027com/passulo/token.proto\022\016com.passulo.v"
-  "1\032\037google/protobuf/timestamp.proto\"\245\002\n\005T"
+  "1\032\037google/protobuf/timestamp.proto\"\377\002\n\005T"
   "oken\022\n\n\002id\030\001 \001(\t\022\021\n\tfirstName\030\002 \001(\t\022\022\n\nm"
-  "iddleName\030\003 \001(\t\022\020\n\010lastName\030\004 \001(\t\022\016\n\006gen"
-  "der\030\005 \001(\t\022\016\n\006number\030\006 \001(\t\022\016\n\006status\030\007 \001("
-  "\t\022\017\n\007company\030\010 \001(\t\022\r\n\005email\030\t \001(\t\022\021\n\ttel"
-  "ephone\030\n \001(\t\022\023\n\013association\030\013 \001(\t\022.\n\nval"
-  "idUntil\030\014 \001(\0132\032.google.protobuf.Timestam"
-  "p\022/\n\013memberSince\030\r \001(\0132\032.google.protobuf"
-  ".TimestampB\r\n\013com.passulob\006proto3"
+  "iddleName\030\003 \001(\t\022\020\n\010lastName\030\004 \001(\t\022,\n\006gen"
+  "der\030\005 \001(\0162\034.com.passulo.v1.Token.Gender\022"
+  "\016\n\006number\030\006 \001(\t\022\016\n\006status\030\007 \001(\t\022\017\n\007compa"
+  "ny\030\010 \001(\t\022\r\n\005email\030\t \001(\t\022\021\n\ttelephone\030\n \001"
+  "(\t\022\023\n\013association\030\013 \001(\t\022.\n\nvalidUntil\030\014 "
+  "\001(\0132\032.google.protobuf.Timestamp\022/\n\013membe"
+  "rSince\030\r \001(\0132\032.google.protobuf.Timestamp"
+  "\":\n\006Gender\022\r\n\tundefined\020\000\022\n\n\006female\020\001\022\010\n"
+  "\004male\020\002\022\013\n\007diverse\020\003B\'\n\013com.passuloZ\030git"
+  "hub.com/passulo/Tokenb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_com_2fpassulo_2ftoken_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_com_2fpassulo_2ftoken_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_com_2fpassulo_2ftoken_2eproto = {
-  false, false, 393, descriptor_table_protodef_com_2fpassulo_2ftoken_2eproto, "com/passulo/token.proto", 
+  false, false, 509, descriptor_table_protodef_com_2fpassulo_2ftoken_2eproto, "com/passulo/token.proto", 
   &descriptor_table_com_2fpassulo_2ftoken_2eproto_once, descriptor_table_com_2fpassulo_2ftoken_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_com_2fpassulo_2ftoken_2eproto::offsets,
   file_level_metadata_com_2fpassulo_2ftoken_2eproto, file_level_enum_descriptors_com_2fpassulo_2ftoken_2eproto, file_level_service_descriptors_com_2fpassulo_2ftoken_2eproto,
@@ -110,6 +114,31 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDe
 namespace com {
 namespace passulo {
 namespace v1 {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Token_Gender_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_com_2fpassulo_2ftoken_2eproto);
+  return file_level_enum_descriptors_com_2fpassulo_2ftoken_2eproto[0];
+}
+bool Token_Gender_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr Token_Gender Token::undefined;
+constexpr Token_Gender Token::female;
+constexpr Token_Gender Token::male;
+constexpr Token_Gender Token::diverse;
+constexpr Token_Gender Token::Gender_MIN;
+constexpr Token_Gender Token::Gender_MAX;
+constexpr int Token::Gender_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
@@ -183,14 +212,6 @@ Token::Token(const Token& from)
     lastname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_lastname(), 
       GetArenaForAllocation());
   }
-  gender_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    gender_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_gender().empty()) {
-    gender_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_gender(), 
-      GetArenaForAllocation());
-  }
   number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -249,6 +270,7 @@ Token::Token(const Token& from)
   } else {
     membersince_ = nullptr;
   }
+  gender_ = from.gender_;
   // @@protoc_insertion_point(copy_constructor:com.passulo.v1.Token)
 }
 
@@ -268,10 +290,6 @@ middlename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 lastname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   lastname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-gender_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  gender_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -299,8 +317,8 @@ association_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&validuntil_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&membersince_) -
-    reinterpret_cast<char*>(&validuntil_)) + sizeof(membersince_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&gender_) -
+    reinterpret_cast<char*>(&validuntil_)) + sizeof(gender_));
 }
 
 Token::~Token() {
@@ -316,7 +334,6 @@ inline void Token::SharedDtor() {
   firstname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   middlename_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   lastname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  gender_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   company_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -347,7 +364,6 @@ void Token::Clear() {
   firstname_.ClearToEmpty();
   middlename_.ClearToEmpty();
   lastname_.ClearToEmpty();
-  gender_.ClearToEmpty();
   number_.ClearToEmpty();
   status_.ClearToEmpty();
   company_.ClearToEmpty();
@@ -362,6 +378,7 @@ void Token::Clear() {
     delete membersince_;
   }
   membersince_ = nullptr;
+  gender_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -411,13 +428,12 @@ const char* Token::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
         } else
           goto handle_unusual;
         continue;
-      // string gender = 5;
+      // .com.passulo.v1.Token.Gender gender = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          auto str = _internal_mutable_gender();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "com.passulo.v1.Token.gender"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
+          _internal_set_gender(static_cast<::com::passulo::v1::Token_Gender>(val));
         } else
           goto handle_unusual;
         continue;
@@ -566,14 +582,11 @@ uint8_t* Token::_InternalSerialize(
         4, this->_internal_lastname(), target);
   }
 
-  // string gender = 5;
-  if (!this->_internal_gender().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_gender().data(), static_cast<int>(this->_internal_gender().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "com.passulo.v1.Token.gender");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_gender(), target);
+  // .com.passulo.v1.Token.Gender gender = 5;
+  if (this->_internal_gender() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      5, this->_internal_gender(), target);
   }
 
   // string number = 6;
@@ -696,13 +709,6 @@ size_t Token::ByteSizeLong() const {
         this->_internal_lastname());
   }
 
-  // string gender = 5;
-  if (!this->_internal_gender().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_gender());
-  }
-
   // string number = 6;
   if (!this->_internal_number().empty()) {
     total_size += 1 +
@@ -759,6 +765,12 @@ size_t Token::ByteSizeLong() const {
         *membersince_);
   }
 
+  // .com.passulo.v1.Token.Gender gender = 5;
+  if (this->_internal_gender() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_gender());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
@@ -793,9 +805,6 @@ void Token::MergeFrom(const Token& from) {
   if (!from._internal_lastname().empty()) {
     _internal_set_lastname(from._internal_lastname());
   }
-  if (!from._internal_gender().empty()) {
-    _internal_set_gender(from._internal_gender());
-  }
   if (!from._internal_number().empty()) {
     _internal_set_number(from._internal_number());
   }
@@ -819,6 +828,9 @@ void Token::MergeFrom(const Token& from) {
   }
   if (from._internal_has_membersince()) {
     _internal_mutable_membersince()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_membersince());
+  }
+  if (from._internal_gender() != 0) {
+    _internal_set_gender(from._internal_gender());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -861,11 +873,6 @@ void Token::InternalSwap(Token* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &gender_, lhs_arena,
-      &other->gender_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &number_, lhs_arena,
       &other->number_, rhs_arena
   );
@@ -895,8 +902,8 @@ void Token::InternalSwap(Token* other) {
       &other->association_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Token, membersince_)
-      + sizeof(Token::membersince_)
+      PROTOBUF_FIELD_OFFSET(Token, gender_)
+      + sizeof(Token::gender_)
       - PROTOBUF_FIELD_OFFSET(Token, validuntil_)>(
           reinterpret_cast<char*>(&validuntil_),
           reinterpret_cast<char*>(&other->validuntil_));

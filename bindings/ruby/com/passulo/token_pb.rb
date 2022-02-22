@@ -12,7 +12,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :firstName, :string, 2
       optional :middleName, :string, 3
       optional :lastName, :string, 4
-      optional :gender, :string, 5
+      optional :gender, :enum, 5, "com.passulo.v1.Token.Gender"
       optional :number, :string, 6
       optional :status, :string, 7
       optional :company, :string, 8
@@ -22,6 +22,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :validUntil, :message, 12, "google.protobuf.Timestamp"
       optional :memberSince, :message, 13, "google.protobuf.Timestamp"
     end
+    add_enum "com.passulo.v1.Token.Gender" do
+      value :undefined, 0
+      value :female, 1
+      value :male, 2
+      value :diverse, 3
+    end
   end
 end
 
@@ -29,6 +35,7 @@ module Com
   module Passulo
     module V1
       Token = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("com.passulo.v1.Token").msgclass
+      Token::Gender = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("com.passulo.v1.Token.Gender").enummodule
     end
   end
 end

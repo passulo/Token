@@ -23,6 +23,10 @@ public object TokenKt {
     internal fun _build(): com.passulo.TokenOuterClass.Token = _builder.build()
 
     /**
+     * <pre>
+     * identifier for this token only
+     * </pre>
+     *
      * <code>string id = 1;</code>
      */
     public var id: kotlin.String
@@ -33,6 +37,10 @@ public object TokenKt {
         _builder.setId(value)
       }
     /**
+     * <pre>
+     * identifier for this token only
+     * </pre>
+     *
      * <code>string id = 1;</code>
      */
     public fun clearId() {
@@ -91,9 +99,9 @@ public object TokenKt {
     }
 
     /**
-     * <code>string gender = 5;</code>
+     * <code>.com.passulo.v1.Token.Gender gender = 5;</code>
      */
-    public var gender: kotlin.String
+    public var gender: com.passulo.TokenOuterClass.Token.Gender
       @JvmName("getGender")
       get() = _builder.getGender()
       @JvmName("setGender")
@@ -101,7 +109,7 @@ public object TokenKt {
         _builder.setGender(value)
       }
     /**
-     * <code>string gender = 5;</code>
+     * <code>.com.passulo.v1.Token.Gender gender = 5;</code>
      */
     public fun clearGender() {
       _builder.clearGender()
