@@ -4,118 +4,197 @@
 #include "com/passulo/token.pb.h"
 
 #include <algorithm>
-
-#include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
-#include <google/protobuf/descriptor.h>
-#include <google/protobuf/generated_message_reflection.h>
-#include <google/protobuf/reflection_ops.h>
-#include <google/protobuf/wire_format.h>
+#include "google/protobuf/io/coded_stream.h"
+#include "google/protobuf/extension_set.h"
+#include "google/protobuf/wire_format_lite.h"
+#include "google/protobuf/descriptor.h"
+#include "google/protobuf/generated_message_reflection.h"
+#include "google/protobuf/reflection_ops.h"
+#include "google/protobuf/wire_format.h"
+#include "google/protobuf/generated_message_tctable_impl.h"
 // @@protoc_insertion_point(includes)
-#include <google/protobuf/port_def.inc>
 
+// Must be included last.
+#include "google/protobuf/port_def.inc"
 PROTOBUF_PRAGMA_INIT_SEG
+namespace _pb = ::google::protobuf;
+namespace _pbi = ::google::protobuf::internal;
+namespace _fl = ::google::protobuf::internal::field_layout;
 namespace com {
 namespace passulo {
 namespace v1 {
-constexpr Token::Token(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , firstname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , middlename_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , lastname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , company_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , telephone_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , association_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , validuntil_(nullptr)
-  , membersince_(nullptr)
-  , gender_(0)
-{}
+        template <typename>
+PROTOBUF_CONSTEXPR Token::Token(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.id_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.firstname_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.middlename_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.lastname_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.number_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.status_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.company_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.email_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.telephone_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.association_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.validuntil_)*/ nullptr,
+      /*decltype(_impl_.membersince_)*/ nullptr,
+      /*decltype(_impl_.gender_)*/ 0,
+    } {}
 struct TokenDefaultTypeInternal {
-  constexpr TokenDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR TokenDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~TokenDefaultTypeInternal() {}
   union {
     Token _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TokenDefaultTypeInternal _Token_default_instance_;
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TokenDefaultTypeInternal _Token_default_instance_;
 }  // namespace v1
 }  // namespace passulo
 }  // namespace com
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_com_2fpassulo_2ftoken_2eproto[1];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_com_2fpassulo_2ftoken_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_com_2fpassulo_2ftoken_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_com_2fpassulo_2ftoken_2eproto[1];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_com_2fpassulo_2ftoken_2eproto[1];
+static constexpr const ::_pb::ServiceDescriptor**
+    file_level_service_descriptors_com_2fpassulo_2ftoken_2eproto = nullptr;
+const ::uint32_t TableStruct_com_2fpassulo_2ftoken_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
+    protodesc_cold) = {
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.id_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.firstname_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.middlename_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.lastname_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.gender_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.number_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.status_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.company_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.email_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.telephone_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.association_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.validuntil_),
+    PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _impl_.membersince_),
+    ~0u,
+    ~0u,
+    ~0u,
+    ~0u,
+    ~0u,
+    ~0u,
+    ~0u,
+    ~0u,
+    ~0u,
+    ~0u,
+    ~0u,
+    0,
+    1,
+};
 
-const uint32_t TableStruct_com_2fpassulo_2ftoken_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, id_),
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, firstname_),
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, middlename_),
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, lastname_),
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, gender_),
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, number_),
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, status_),
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, company_),
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, email_),
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, telephone_),
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, association_),
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, validuntil_),
-  PROTOBUF_FIELD_OFFSET(::com::passulo::v1::Token, membersince_),
-};
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::com::passulo::v1::Token)},
+static const ::_pbi::MigrationSchema
+    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+        {0, 21, -1, sizeof(::com::passulo::v1::Token)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::com::passulo::v1::_Token_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+    &::com::passulo::v1::_Token_default_instance_._instance,
+};
+const char descriptor_table_protodef_com_2fpassulo_2ftoken_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+    "\n\027com/passulo/token.proto\022\016com.passulo.v"
+    "1\032\037google/protobuf/timestamp.proto\"\377\002\n\005T"
+    "oken\022\n\n\002id\030\001 \001(\t\022\021\n\tfirstName\030\002 \001(\t\022\022\n\nm"
+    "iddleName\030\003 \001(\t\022\020\n\010lastName\030\004 \001(\t\022,\n\006gen"
+    "der\030\005 \001(\0162\034.com.passulo.v1.Token.Gender\022"
+    "\016\n\006number\030\006 \001(\t\022\016\n\006status\030\007 \001(\t\022\017\n\007compa"
+    "ny\030\010 \001(\t\022\r\n\005email\030\t \001(\t\022\021\n\ttelephone\030\n \001"
+    "(\t\022\023\n\013association\030\013 \001(\t\022.\n\nvalidUntil\030\014 "
+    "\001(\0132\032.google.protobuf.Timestamp\022/\n\013membe"
+    "rSince\030\r \001(\0132\032.google.protobuf.Timestamp"
+    "\":\n\006Gender\022\r\n\tundefined\020\000\022\n\n\006female\020\001\022\010\n"
+    "\004male\020\002\022\013\n\007diverse\020\003B\'\n\013com.passuloZ\030git"
+    "hub.com/passulo/Tokenb\006proto3"
+};
+static const ::_pbi::DescriptorTable* const descriptor_table_com_2fpassulo_2ftoken_2eproto_deps[1] =
+    {
+        &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
+};
+static ::absl::once_flag descriptor_table_com_2fpassulo_2ftoken_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_com_2fpassulo_2ftoken_2eproto = {
+    false,
+    false,
+    509,
+    descriptor_table_protodef_com_2fpassulo_2ftoken_2eproto,
+    "com/passulo/token.proto",
+    &descriptor_table_com_2fpassulo_2ftoken_2eproto_once,
+    descriptor_table_com_2fpassulo_2ftoken_2eproto_deps,
+    1,
+    1,
+    schemas,
+    file_default_instances,
+    TableStruct_com_2fpassulo_2ftoken_2eproto::offsets,
+    file_level_metadata_com_2fpassulo_2ftoken_2eproto,
+    file_level_enum_descriptors_com_2fpassulo_2ftoken_2eproto,
+    file_level_service_descriptors_com_2fpassulo_2ftoken_2eproto,
 };
 
-const char descriptor_table_protodef_com_2fpassulo_2ftoken_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\027com/passulo/token.proto\022\016com.passulo.v"
-  "1\032\037google/protobuf/timestamp.proto\"\377\002\n\005T"
-  "oken\022\n\n\002id\030\001 \001(\t\022\021\n\tfirstName\030\002 \001(\t\022\022\n\nm"
-  "iddleName\030\003 \001(\t\022\020\n\010lastName\030\004 \001(\t\022,\n\006gen"
-  "der\030\005 \001(\0162\034.com.passulo.v1.Token.Gender\022"
-  "\016\n\006number\030\006 \001(\t\022\016\n\006status\030\007 \001(\t\022\017\n\007compa"
-  "ny\030\010 \001(\t\022\r\n\005email\030\t \001(\t\022\021\n\ttelephone\030\n \001"
-  "(\t\022\023\n\013association\030\013 \001(\t\022.\n\nvalidUntil\030\014 "
-  "\001(\0132\032.google.protobuf.Timestamp\022/\n\013membe"
-  "rSince\030\r \001(\0132\032.google.protobuf.Timestamp"
-  "\":\n\006Gender\022\r\n\tundefined\020\000\022\n\n\006female\020\001\022\010\n"
-  "\004male\020\002\022\013\n\007diverse\020\003B\'\n\013com.passuloZ\030git"
-  "hub.com/passulo/Tokenb\006proto3"
-  ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_com_2fpassulo_2ftoken_2eproto_deps[1] = {
-  &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_com_2fpassulo_2ftoken_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_com_2fpassulo_2ftoken_2eproto = {
-  false, false, 509, descriptor_table_protodef_com_2fpassulo_2ftoken_2eproto, "com/passulo/token.proto", 
-  &descriptor_table_com_2fpassulo_2ftoken_2eproto_once, descriptor_table_com_2fpassulo_2ftoken_2eproto_deps, 1, 1,
-  schemas, file_default_instances, TableStruct_com_2fpassulo_2ftoken_2eproto::offsets,
-  file_level_metadata_com_2fpassulo_2ftoken_2eproto, file_level_enum_descriptors_com_2fpassulo_2ftoken_2eproto, file_level_service_descriptors_com_2fpassulo_2ftoken_2eproto,
-};
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_com_2fpassulo_2ftoken_2eproto_getter() {
+// This function exists to be marked as weak.
+// It can significantly speed up compilation by breaking up LLVM's SCC
+// in the .pb.cc translation units. Large translation units see a
+// reduction of more than 35% of walltime for optimized builds. Without
+// the weak attribute all the messages in the file, including all the
+// vtables and everything they use become part of the same SCC through
+// a cycle like:
+// GetMetadata -> descriptor table -> default instances ->
+//   vtables -> GetMetadata
+// By adding a weak function here we break the connection from the
+// individual vtables back into the descriptor table.
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_com_2fpassulo_2ftoken_2eproto_getter() {
   return &descriptor_table_com_2fpassulo_2ftoken_2eproto;
 }
-
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_com_2fpassulo_2ftoken_2eproto(&descriptor_table_com_2fpassulo_2ftoken_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
+static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_com_2fpassulo_2ftoken_2eproto(&descriptor_table_com_2fpassulo_2ftoken_2eproto);
 namespace com {
 namespace passulo {
 namespace v1 {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Token_Gender_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_com_2fpassulo_2ftoken_2eproto);
+const ::google::protobuf::EnumDescriptor* Token_Gender_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_com_2fpassulo_2ftoken_2eproto);
   return file_level_enum_descriptors_com_2fpassulo_2ftoken_2eproto[0];
 }
 bool Token_Gender_IsValid(int value) {
@@ -129,8 +208,9 @@ bool Token_Gender_IsValid(int value) {
       return false;
   }
 }
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr Token_Gender Token::undefined;
 constexpr Token_Gender Token::female;
 constexpr Token_Gender Token::male;
@@ -138,701 +218,660 @@ constexpr Token_Gender Token::diverse;
 constexpr Token_Gender Token::Gender_MIN;
 constexpr Token_Gender Token::Gender_MAX;
 constexpr int Token::Gender_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 // ===================================================================
 
 class Token::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& validuntil(const Token* msg);
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& membersince(const Token* msg);
+  using HasBits = decltype(std::declval<Token>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Token, _impl_._has_bits_);
+  static const ::google::protobuf::Timestamp& validuntil(const Token* msg);
+  static void set_has_validuntil(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static const ::google::protobuf::Timestamp& membersince(const Token* msg);
+  static void set_has_membersince(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
 };
 
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
-Token::_Internal::validuntil(const Token* msg) {
-  return *msg->validuntil_;
+const ::google::protobuf::Timestamp& Token::_Internal::validuntil(const Token* msg) {
+  return *msg->_impl_.validuntil_;
 }
-const ::PROTOBUF_NAMESPACE_ID::Timestamp&
-Token::_Internal::membersince(const Token* msg) {
-  return *msg->membersince_;
+const ::google::protobuf::Timestamp& Token::_Internal::membersince(const Token* msg) {
+  return *msg->_impl_.membersince_;
 }
 void Token::clear_validuntil() {
-  if (GetArenaForAllocation() == nullptr && validuntil_ != nullptr) {
-    delete validuntil_;
-  }
-  validuntil_ = nullptr;
+  if (_impl_.validuntil_ != nullptr) _impl_.validuntil_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 void Token::clear_membersince() {
-  if (GetArenaForAllocation() == nullptr && membersince_ != nullptr) {
-    delete membersince_;
-  }
-  membersince_ = nullptr;
+  if (_impl_.membersince_ != nullptr) _impl_.membersince_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
-Token::Token(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+Token::Token(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:com.passulo.v1.Token)
 }
-Token::Token(const Token& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+Token::Token(const Token& from) : ::google::protobuf::Message() {
+  Token* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){},
+      decltype(_impl_.firstname_){},
+      decltype(_impl_.middlename_){},
+      decltype(_impl_.lastname_){},
+      decltype(_impl_.number_){},
+      decltype(_impl_.status_){},
+      decltype(_impl_.company_){},
+      decltype(_impl_.email_){},
+      decltype(_impl_.telephone_){},
+      decltype(_impl_.association_){},
+      decltype(_impl_.validuntil_){nullptr},
+      decltype(_impl_.membersince_){nullptr},
+      decltype(_impl_.gender_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
-      GetArenaForAllocation());
+    _this->_impl_.id_.Set(from._internal_id(), _this->GetArenaForAllocation());
   }
-  firstname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.firstname_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    firstname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.firstname_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_firstname().empty()) {
-    firstname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_firstname(), 
-      GetArenaForAllocation());
+    _this->_impl_.firstname_.Set(from._internal_firstname(), _this->GetArenaForAllocation());
   }
-  middlename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.middlename_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    middlename_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.middlename_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_middlename().empty()) {
-    middlename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_middlename(), 
-      GetArenaForAllocation());
+    _this->_impl_.middlename_.Set(from._internal_middlename(), _this->GetArenaForAllocation());
   }
-  lastname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.lastname_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    lastname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.lastname_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_lastname().empty()) {
-    lastname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_lastname(), 
-      GetArenaForAllocation());
+    _this->_impl_.lastname_.Set(from._internal_lastname(), _this->GetArenaForAllocation());
   }
-  number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.number_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.number_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_number().empty()) {
-    number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_number(), 
-      GetArenaForAllocation());
+    _this->_impl_.number_.Set(from._internal_number(), _this->GetArenaForAllocation());
   }
-  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.status_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    status_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.status_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_status().empty()) {
-    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
-      GetArenaForAllocation());
+    _this->_impl_.status_.Set(from._internal_status(), _this->GetArenaForAllocation());
   }
-  company_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.company_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    company_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.company_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_company().empty()) {
-    company_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_company(), 
-      GetArenaForAllocation());
+    _this->_impl_.company_.Set(from._internal_company(), _this->GetArenaForAllocation());
   }
-  email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.email_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.email_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_email().empty()) {
-    email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_email(), 
-      GetArenaForAllocation());
+    _this->_impl_.email_.Set(from._internal_email(), _this->GetArenaForAllocation());
   }
-  telephone_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.telephone_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    telephone_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.telephone_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_telephone().empty()) {
-    telephone_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_telephone(), 
-      GetArenaForAllocation());
+    _this->_impl_.telephone_.Set(from._internal_telephone(), _this->GetArenaForAllocation());
   }
-  association_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.association_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    association_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.association_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_association().empty()) {
-    association_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_association(), 
-      GetArenaForAllocation());
+    _this->_impl_.association_.Set(from._internal_association(), _this->GetArenaForAllocation());
   }
-  if (from._internal_has_validuntil()) {
-    validuntil_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.validuntil_);
-  } else {
-    validuntil_ = nullptr;
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.validuntil_ = new ::google::protobuf::Timestamp(*from._impl_.validuntil_);
   }
-  if (from._internal_has_membersince()) {
-    membersince_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.membersince_);
-  } else {
-    membersince_ = nullptr;
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.membersince_ = new ::google::protobuf::Timestamp(*from._impl_.membersince_);
   }
-  gender_ = from.gender_;
+  _this->_impl_.gender_ = from._impl_.gender_;
+
   // @@protoc_insertion_point(copy_constructor:com.passulo.v1.Token)
 }
-
-inline void Token::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-firstname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  firstname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-middlename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  middlename_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-lastname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  lastname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  status_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-company_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  company_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-telephone_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  telephone_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-association_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  association_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&validuntil_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&gender_) -
-    reinterpret_cast<char*>(&validuntil_)) + sizeof(gender_));
+inline void Token::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){},
+      decltype(_impl_.firstname_){},
+      decltype(_impl_.middlename_){},
+      decltype(_impl_.lastname_){},
+      decltype(_impl_.number_){},
+      decltype(_impl_.status_){},
+      decltype(_impl_.company_){},
+      decltype(_impl_.email_){},
+      decltype(_impl_.telephone_){},
+      decltype(_impl_.association_){},
+      decltype(_impl_.validuntil_){nullptr},
+      decltype(_impl_.membersince_){nullptr},
+      decltype(_impl_.gender_){0},
+  };
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.firstname_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.firstname_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.middlename_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.middlename_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.lastname_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.lastname_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.number_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.number_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.status_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.status_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.company_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.company_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.email_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.email_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.telephone_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.telephone_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.association_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.association_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 Token::~Token() {
   // @@protoc_insertion_point(destructor:com.passulo.v1.Token)
-  if (GetArenaForAllocation() != nullptr) return;
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
-
 inline void Token::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  firstname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  middlename_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  lastname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  company_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  telephone_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  association_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete validuntil_;
-  if (this != internal_default_instance()) delete membersince_;
-}
-
-void Token::ArenaDtor(void* object) {
-  Token* _this = reinterpret_cast< Token* >(object);
-  (void)_this;
-}
-void Token::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.id_.Destroy();
+  _impl_.firstname_.Destroy();
+  _impl_.middlename_.Destroy();
+  _impl_.lastname_.Destroy();
+  _impl_.number_.Destroy();
+  _impl_.status_.Destroy();
+  _impl_.company_.Destroy();
+  _impl_.email_.Destroy();
+  _impl_.telephone_.Destroy();
+  _impl_.association_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.validuntil_;
+  if (this != internal_default_instance()) delete _impl_.membersince_;
 }
 void Token::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
-void Token::Clear() {
+PROTOBUF_NOINLINE void Token::Clear() {
 // @@protoc_insertion_point(message_clear_start:com.passulo.v1.Token)
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
-  firstname_.ClearToEmpty();
-  middlename_.ClearToEmpty();
-  lastname_.ClearToEmpty();
-  number_.ClearToEmpty();
-  status_.ClearToEmpty();
-  company_.ClearToEmpty();
-  email_.ClearToEmpty();
-  telephone_.ClearToEmpty();
-  association_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && validuntil_ != nullptr) {
-    delete validuntil_;
-  }
-  validuntil_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && membersince_ != nullptr) {
-    delete membersince_;
-  }
-  membersince_ = nullptr;
-  gender_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* Token::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "com.passulo.v1.Token.id"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string firstName = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_firstname();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "com.passulo.v1.Token.firstName"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string middleName = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_middlename();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "com.passulo.v1.Token.middleName"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string lastName = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          auto str = _internal_mutable_lastname();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "com.passulo.v1.Token.lastName"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .com.passulo.v1.Token.Gender gender = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_gender(static_cast<::com::passulo::v1::Token_Gender>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // string number = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          auto str = _internal_mutable_number();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "com.passulo.v1.Token.number"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string status = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
-          auto str = _internal_mutable_status();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "com.passulo.v1.Token.status"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string company = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
-          auto str = _internal_mutable_company();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "com.passulo.v1.Token.company"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string email = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
-          auto str = _internal_mutable_email();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "com.passulo.v1.Token.email"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string telephone = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
-          auto str = _internal_mutable_telephone();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "com.passulo.v1.Token.telephone"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string association = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
-          auto str = _internal_mutable_association();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "com.passulo.v1.Token.association"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .google.protobuf.Timestamp validUntil = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
-          ptr = ctx->ParseMessage(_internal_mutable_validuntil(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .google.protobuf.Timestamp memberSince = 13;
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
-          ptr = ctx->ParseMessage(_internal_mutable_membersince(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
+  _impl_.id_.ClearToEmpty();
+  _impl_.firstname_.ClearToEmpty();
+  _impl_.middlename_.ClearToEmpty();
+  _impl_.lastname_.ClearToEmpty();
+  _impl_.number_.ClearToEmpty();
+  _impl_.status_.ClearToEmpty();
+  _impl_.company_.ClearToEmpty();
+  _impl_.email_.ClearToEmpty();
+  _impl_.telephone_.ClearToEmpty();
+  _impl_.association_.ClearToEmpty();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      ABSL_DCHECK(_impl_.validuntil_ != nullptr);
+      _impl_.validuntil_->Clear();
     }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
+    if (cached_has_bits & 0x00000002u) {
+      ABSL_DCHECK(_impl_.membersince_ != nullptr);
+      _impl_.membersince_->Clear();
+    }
+  }
+  _impl_.gender_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-uint8_t* Token::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+const char* Token::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 13, 2, 110, 2> Token::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Token, _impl_._has_bits_),
+    0, // no _extensions_
+    13, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294959104,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    13,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Token_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // string id = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.id_)}},
+    // string firstName = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.firstname_)}},
+    // string middleName = 3;
+    {::_pbi::TcParser::FastUS1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.middlename_)}},
+    // string lastName = 4;
+    {::_pbi::TcParser::FastUS1,
+     {34, 63, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.lastname_)}},
+    // .com.passulo.v1.Token.Gender gender = 5;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Token, _impl_.gender_), 63>(),
+     {40, 63, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.gender_)}},
+    // string number = 6;
+    {::_pbi::TcParser::FastUS1,
+     {50, 63, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.number_)}},
+    // string status = 7;
+    {::_pbi::TcParser::FastUS1,
+     {58, 63, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.status_)}},
+    // string company = 8;
+    {::_pbi::TcParser::FastUS1,
+     {66, 63, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.company_)}},
+    // string email = 9;
+    {::_pbi::TcParser::FastUS1,
+     {74, 63, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.email_)}},
+    // string telephone = 10;
+    {::_pbi::TcParser::FastUS1,
+     {82, 63, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.telephone_)}},
+    // string association = 11;
+    {::_pbi::TcParser::FastUS1,
+     {90, 63, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.association_)}},
+    // .google.protobuf.Timestamp validUntil = 12;
+    {::_pbi::TcParser::FastMtS1,
+     {98, 0, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.validuntil_)}},
+    // .google.protobuf.Timestamp memberSince = 13;
+    {::_pbi::TcParser::FastMtS1,
+     {106, 1, 1, PROTOBUF_FIELD_OFFSET(Token, _impl_.membersince_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string id = 1;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.id_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string firstName = 2;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.firstname_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string middleName = 3;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.middlename_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string lastName = 4;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.lastname_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .com.passulo.v1.Token.Gender gender = 5;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.gender_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // string number = 6;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.number_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string status = 7;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.status_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string company = 8;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.company_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string email = 9;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.email_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string telephone = 10;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.telephone_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string association = 11;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.association_), -1, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .google.protobuf.Timestamp validUntil = 12;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.validuntil_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .google.protobuf.Timestamp memberSince = 13;
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.membersince_), _Internal::kHasBitsOffset + 1, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::google::protobuf::Timestamp>()},
+    {::_pbi::TcParser::GetTable<::google::protobuf::Timestamp>()},
+  }}, {{
+    "\24\2\11\12\10\0\6\6\7\5\11\13\0\0\0\0"
+    "com.passulo.v1.Token"
+    "id"
+    "firstName"
+    "middleName"
+    "lastName"
+    "number"
+    "status"
+    "company"
+    "email"
+    "telephone"
+    "association"
+  }},
+};
+
+::uint8_t* Token::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:com.passulo.v1.Token)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // string id = 1;
   if (!this->_internal_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "com.passulo.v1.Token.id");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+    const std::string& _s = this->_internal_id();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "com.passulo.v1.Token.id");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // string firstName = 2;
   if (!this->_internal_firstname().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_firstname().data(), static_cast<int>(this->_internal_firstname().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "com.passulo.v1.Token.firstName");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_firstname(), target);
+    const std::string& _s = this->_internal_firstname();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "com.passulo.v1.Token.firstName");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   // string middleName = 3;
   if (!this->_internal_middlename().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_middlename().data(), static_cast<int>(this->_internal_middlename().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "com.passulo.v1.Token.middleName");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_middlename(), target);
+    const std::string& _s = this->_internal_middlename();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "com.passulo.v1.Token.middleName");
+    target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
   // string lastName = 4;
   if (!this->_internal_lastname().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_lastname().data(), static_cast<int>(this->_internal_lastname().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "com.passulo.v1.Token.lastName");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_lastname(), target);
+    const std::string& _s = this->_internal_lastname();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "com.passulo.v1.Token.lastName");
+    target = stream->WriteStringMaybeAliased(4, _s, target);
   }
 
   // .com.passulo.v1.Token.Gender gender = 5;
   if (this->_internal_gender() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      5, this->_internal_gender(), target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        5, this->_internal_gender(), target);
   }
 
   // string number = 6;
   if (!this->_internal_number().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_number().data(), static_cast<int>(this->_internal_number().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "com.passulo.v1.Token.number");
-    target = stream->WriteStringMaybeAliased(
-        6, this->_internal_number(), target);
+    const std::string& _s = this->_internal_number();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "com.passulo.v1.Token.number");
+    target = stream->WriteStringMaybeAliased(6, _s, target);
   }
 
   // string status = 7;
   if (!this->_internal_status().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "com.passulo.v1.Token.status");
-    target = stream->WriteStringMaybeAliased(
-        7, this->_internal_status(), target);
+    const std::string& _s = this->_internal_status();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "com.passulo.v1.Token.status");
+    target = stream->WriteStringMaybeAliased(7, _s, target);
   }
 
   // string company = 8;
   if (!this->_internal_company().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_company().data(), static_cast<int>(this->_internal_company().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "com.passulo.v1.Token.company");
-    target = stream->WriteStringMaybeAliased(
-        8, this->_internal_company(), target);
+    const std::string& _s = this->_internal_company();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "com.passulo.v1.Token.company");
+    target = stream->WriteStringMaybeAliased(8, _s, target);
   }
 
   // string email = 9;
   if (!this->_internal_email().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_email().data(), static_cast<int>(this->_internal_email().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "com.passulo.v1.Token.email");
-    target = stream->WriteStringMaybeAliased(
-        9, this->_internal_email(), target);
+    const std::string& _s = this->_internal_email();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "com.passulo.v1.Token.email");
+    target = stream->WriteStringMaybeAliased(9, _s, target);
   }
 
   // string telephone = 10;
   if (!this->_internal_telephone().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_telephone().data(), static_cast<int>(this->_internal_telephone().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "com.passulo.v1.Token.telephone");
-    target = stream->WriteStringMaybeAliased(
-        10, this->_internal_telephone(), target);
+    const std::string& _s = this->_internal_telephone();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "com.passulo.v1.Token.telephone");
+    target = stream->WriteStringMaybeAliased(10, _s, target);
   }
 
   // string association = 11;
   if (!this->_internal_association().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_association().data(), static_cast<int>(this->_internal_association().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "com.passulo.v1.Token.association");
-    target = stream->WriteStringMaybeAliased(
-        11, this->_internal_association(), target);
+    const std::string& _s = this->_internal_association();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "com.passulo.v1.Token.association");
+    target = stream->WriteStringMaybeAliased(11, _s, target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // .google.protobuf.Timestamp validUntil = 12;
-  if (this->_internal_has_validuntil()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        12, _Internal::validuntil(this), target, stream);
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessage(12, _Internal::validuntil(this),
+        _Internal::validuntil(this).GetCachedSize(), target, stream);
   }
 
   // .google.protobuf.Timestamp memberSince = 13;
-  if (this->_internal_has_membersince()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        13, _Internal::membersince(this), target, stream);
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessage(13, _Internal::membersince(this),
+        _Internal::membersince(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:com.passulo.v1.Token)
   return target;
 }
 
-size_t Token::ByteSizeLong() const {
+::size_t Token::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:com.passulo.v1.Token)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string id = 1;
   if (!this->_internal_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_id());
   }
 
   // string firstName = 2;
   if (!this->_internal_firstname().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_firstname());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_firstname());
   }
 
   // string middleName = 3;
   if (!this->_internal_middlename().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_middlename());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_middlename());
   }
 
   // string lastName = 4;
   if (!this->_internal_lastname().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_lastname());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_lastname());
   }
 
   // string number = 6;
   if (!this->_internal_number().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_number());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_number());
   }
 
   // string status = 7;
   if (!this->_internal_status().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_status());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_status());
   }
 
   // string company = 8;
   if (!this->_internal_company().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_company());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_company());
   }
 
   // string email = 9;
   if (!this->_internal_email().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_email());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_email());
   }
 
   // string telephone = 10;
   if (!this->_internal_telephone().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_telephone());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_telephone());
   }
 
   // string association = 11;
   if (!this->_internal_association().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_association());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_association());
   }
 
-  // .google.protobuf.Timestamp validUntil = 12;
-  if (this->_internal_has_validuntil()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *validuntil_);
-  }
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // .google.protobuf.Timestamp validUntil = 12;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.validuntil_);
+    }
 
-  // .google.protobuf.Timestamp memberSince = 13;
-  if (this->_internal_has_membersince()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *membersince_);
-  }
+    // .google.protobuf.Timestamp memberSince = 13;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.membersince_);
+    }
 
+  }
   // .com.passulo.v1.Token.Gender gender = 5;
   if (this->_internal_gender() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_gender());
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_gender());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Token::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+const ::google::protobuf::Message::ClassData Token::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
     Token::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Token::GetClassData() const { return &_class_data_; }
-
-void Token::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Token *>(to)->MergeFrom(
-      static_cast<const Token &>(from));
-}
+const ::google::protobuf::Message::ClassData*Token::GetClassData() const { return &_class_data_; }
 
 
-void Token::MergeFrom(const Token& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:com.passulo.v1.Token)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+void Token::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Token*>(&to_msg);
+  auto& from = static_cast<const Token&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:com.passulo.v1.Token)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
+    _this->_internal_set_id(from._internal_id());
   }
   if (!from._internal_firstname().empty()) {
-    _internal_set_firstname(from._internal_firstname());
+    _this->_internal_set_firstname(from._internal_firstname());
   }
   if (!from._internal_middlename().empty()) {
-    _internal_set_middlename(from._internal_middlename());
+    _this->_internal_set_middlename(from._internal_middlename());
   }
   if (!from._internal_lastname().empty()) {
-    _internal_set_lastname(from._internal_lastname());
+    _this->_internal_set_lastname(from._internal_lastname());
   }
   if (!from._internal_number().empty()) {
-    _internal_set_number(from._internal_number());
+    _this->_internal_set_number(from._internal_number());
   }
   if (!from._internal_status().empty()) {
-    _internal_set_status(from._internal_status());
+    _this->_internal_set_status(from._internal_status());
   }
   if (!from._internal_company().empty()) {
-    _internal_set_company(from._internal_company());
+    _this->_internal_set_company(from._internal_company());
   }
   if (!from._internal_email().empty()) {
-    _internal_set_email(from._internal_email());
+    _this->_internal_set_email(from._internal_email());
   }
   if (!from._internal_telephone().empty()) {
-    _internal_set_telephone(from._internal_telephone());
+    _this->_internal_set_telephone(from._internal_telephone());
   }
   if (!from._internal_association().empty()) {
-    _internal_set_association(from._internal_association());
+    _this->_internal_set_association(from._internal_association());
   }
-  if (from._internal_has_validuntil()) {
-    _internal_mutable_validuntil()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_validuntil());
-  }
-  if (from._internal_has_membersince()) {
-    _internal_mutable_membersince()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_membersince());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_mutable_validuntil()->::google::protobuf::Timestamp::MergeFrom(
+          from._internal_validuntil());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_membersince()->::google::protobuf::Timestamp::MergeFrom(
+          from._internal_membersince());
+    }
   }
   if (from._internal_gender() != 0) {
-    _internal_set_gender(from._internal_gender());
+    _this->_internal_set_gender(from._internal_gender());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Token::CopyFrom(const Token& from) {
@@ -842,7 +881,7 @@ void Token::CopyFrom(const Token& from) {
   MergeFrom(from);
 }
 
-bool Token::IsInitialized() const {
+PROTOBUF_NOINLINE bool Token::IsInitialized() const {
   return true;
 }
 
@@ -851,79 +890,47 @@ void Token::InternalSwap(Token* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, lhs_arena,
-      &other->id_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &firstname_, lhs_arena,
-      &other->firstname_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &middlename_, lhs_arena,
-      &other->middlename_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &lastname_, lhs_arena,
-      &other->lastname_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &number_, lhs_arena,
-      &other->number_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &status_, lhs_arena,
-      &other->status_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &company_, lhs_arena,
-      &other->company_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &email_, lhs_arena,
-      &other->email_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &telephone_, lhs_arena,
-      &other->telephone_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &association_, lhs_arena,
-      &other->association_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Token, gender_)
-      + sizeof(Token::gender_)
-      - PROTOBUF_FIELD_OFFSET(Token, validuntil_)>(
-          reinterpret_cast<char*>(&validuntil_),
-          reinterpret_cast<char*>(&other->validuntil_));
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, lhs_arena,
+                                       &other->_impl_.id_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.firstname_, lhs_arena,
+                                       &other->_impl_.firstname_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.middlename_, lhs_arena,
+                                       &other->_impl_.middlename_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.lastname_, lhs_arena,
+                                       &other->_impl_.lastname_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.number_, lhs_arena,
+                                       &other->_impl_.number_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.status_, lhs_arena,
+                                       &other->_impl_.status_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.company_, lhs_arena,
+                                       &other->_impl_.company_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.email_, lhs_arena,
+                                       &other->_impl_.email_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.telephone_, lhs_arena,
+                                       &other->_impl_.telephone_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.association_, lhs_arena,
+                                       &other->_impl_.association_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Token, _impl_.gender_)
+      + sizeof(Token::_impl_.gender_)
+      - PROTOBUF_FIELD_OFFSET(Token, _impl_.validuntil_)>(
+          reinterpret_cast<char*>(&_impl_.validuntil_),
+          reinterpret_cast<char*>(&other->_impl_.validuntil_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Token::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+::google::protobuf::Metadata Token::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_com_2fpassulo_2ftoken_2eproto_getter, &descriptor_table_com_2fpassulo_2ftoken_2eproto_once,
       file_level_metadata_com_2fpassulo_2ftoken_2eproto[0]);
 }
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace passulo
 }  // namespace com
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::com::passulo::v1::Token* Arena::CreateMaybeMessage< ::com::passulo::v1::Token >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::com::passulo::v1::Token >(arena);
-}
-PROTOBUF_NAMESPACE_CLOSE
-
+namespace google {
+namespace protobuf {
+}  // namespace protobuf
+}  // namespace google
 // @@protoc_insertion_point(global_scope)
-#include <google/protobuf/port_undef.inc>
+#include "google/protobuf/port_undef.inc"

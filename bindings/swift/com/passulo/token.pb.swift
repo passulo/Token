@@ -112,7 +112,7 @@ struct Com_Passulo_V1_Token {
 
 extension Com_Passulo_V1_Token.Gender: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [Com_Passulo_V1_Token.Gender] = [
+  static let allCases: [Com_Passulo_V1_Token.Gender] = [
     .undefined,
     .female,
     .male,
@@ -121,6 +121,11 @@ extension Com_Passulo_V1_Token.Gender: CaseIterable {
 }
 
 #endif  // swift(>=4.2)
+
+#if swift(>=5.5) && canImport(_Concurrency)
+extension Com_Passulo_V1_Token: @unchecked Sendable {}
+extension Com_Passulo_V1_Token.Gender: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

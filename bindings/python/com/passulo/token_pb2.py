@@ -4,9 +4,8 @@
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -17,23 +16,14 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x63om/passulo/token.proto\x12\x0e\x63om.passulo.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xff\x02\n\x05Token\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfirstName\x18\x02 \x01(\t\x12\x12\n\nmiddleName\x18\x03 \x01(\t\x12\x10\n\x08lastName\x18\x04 \x01(\t\x12,\n\x06gender\x18\x05 \x01(\x0e\x32\x1c.com.passulo.v1.Token.Gender\x12\x0e\n\x06number\x18\x06 \x01(\t\x12\x0e\n\x06status\x18\x07 \x01(\t\x12\x0f\n\x07\x63ompany\x18\x08 \x01(\t\x12\r\n\x05\x65mail\x18\t \x01(\t\x12\x11\n\ttelephone\x18\n \x01(\t\x12\x13\n\x0b\x61ssociation\x18\x0b \x01(\t\x12.\n\nvalidUntil\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmemberSince\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\":\n\x06Gender\x12\r\n\tundefined\x10\x00\x12\n\n\x06\x66\x65male\x10\x01\x12\x08\n\x04male\x10\x02\x12\x0b\n\x07\x64iverse\x10\x03\x42\'\n\x0b\x63om.passuloZ\x18github.com/passulo/Tokenb\x06proto3')
 
-
-
-_TOKEN = DESCRIPTOR.message_types_by_name['Token']
-_TOKEN_GENDER = _TOKEN.enum_types_by_name['Gender']
-Token = _reflection.GeneratedProtocolMessageType('Token', (_message.Message,), {
-  'DESCRIPTOR' : _TOKEN,
-  '__module__' : 'com.passulo.token_pb2'
-  # @@protoc_insertion_point(class_scope:com.passulo.v1.Token)
-  })
-_sym_db.RegisterMessage(Token)
-
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'com.passulo.token_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
-  DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\013com.passuloZ\030github.com/passulo/Token'
-  _TOKEN._serialized_start=77
-  _TOKEN._serialized_end=460
-  _TOKEN_GENDER._serialized_start=402
-  _TOKEN_GENDER._serialized_end=460
+  _globals['DESCRIPTOR']._options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\013com.passuloZ\030github.com/passulo/Token'
+  _globals['_TOKEN']._serialized_start=77
+  _globals['_TOKEN']._serialized_end=460
+  _globals['_TOKEN_GENDER']._serialized_start=402
+  _globals['_TOKEN_GENDER']._serialized_end=460
 # @@protoc_insertion_point(module_scope)

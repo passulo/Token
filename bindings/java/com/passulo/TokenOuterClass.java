@@ -220,140 +220,6 @@ public final class TokenOuterClass {
       return new Token();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Token(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              firstName_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              middleName_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              lastName_ = s;
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              gender_ = rawValue;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              number_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              status_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              company_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              email_ = s;
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              telephone_ = s;
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              association_ = s;
-              break;
-            }
-            case 98: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (validUntil_ != null) {
-                subBuilder = validUntil_.toBuilder();
-              }
-              validUntil_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(validUntil_);
-                validUntil_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 106: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (memberSince_ != null) {
-                subBuilder = memberSince_.toBuilder();
-              }
-              memberSince_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(memberSince_);
-                memberSince_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.passulo.TokenOuterClass.internal_static_com_passulo_v1_Token_descriptor;
@@ -493,8 +359,10 @@ public final class TokenOuterClass {
       // @@protoc_insertion_point(enum_scope:com.passulo.v1.Token.Gender)
     }
 
+    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      * <pre>
      * identifier for this token only
@@ -540,7 +408,8 @@ public final class TokenOuterClass {
     }
 
     public static final int FIRSTNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object firstName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object firstName_ = "";
     /**
      * <code>string firstName = 2;</code>
      * @return The firstName.
@@ -578,7 +447,8 @@ public final class TokenOuterClass {
     }
 
     public static final int MIDDLENAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object middleName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object middleName_ = "";
     /**
      * <code>string middleName = 3;</code>
      * @return The middleName.
@@ -616,7 +486,8 @@ public final class TokenOuterClass {
     }
 
     public static final int LASTNAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object lastName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object lastName_ = "";
     /**
      * <code>string lastName = 4;</code>
      * @return The lastName.
@@ -654,7 +525,7 @@ public final class TokenOuterClass {
     }
 
     public static final int GENDER_FIELD_NUMBER = 5;
-    private int gender_;
+    private int gender_ = 0;
     /**
      * <code>.com.passulo.v1.Token.Gender gender = 5;</code>
      * @return The enum numeric value on the wire for gender.
@@ -667,13 +538,13 @@ public final class TokenOuterClass {
      * @return The gender.
      */
     @java.lang.Override public com.passulo.TokenOuterClass.Token.Gender getGender() {
-      @SuppressWarnings("deprecation")
-      com.passulo.TokenOuterClass.Token.Gender result = com.passulo.TokenOuterClass.Token.Gender.valueOf(gender_);
+      com.passulo.TokenOuterClass.Token.Gender result = com.passulo.TokenOuterClass.Token.Gender.forNumber(gender_);
       return result == null ? com.passulo.TokenOuterClass.Token.Gender.UNRECOGNIZED : result;
     }
 
     public static final int NUMBER_FIELD_NUMBER = 6;
-    private volatile java.lang.Object number_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object number_ = "";
     /**
      * <code>string number = 6;</code>
      * @return The number.
@@ -711,7 +582,8 @@ public final class TokenOuterClass {
     }
 
     public static final int STATUS_FIELD_NUMBER = 7;
-    private volatile java.lang.Object status_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object status_ = "";
     /**
      * <code>string status = 7;</code>
      * @return The status.
@@ -749,7 +621,8 @@ public final class TokenOuterClass {
     }
 
     public static final int COMPANY_FIELD_NUMBER = 8;
-    private volatile java.lang.Object company_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object company_ = "";
     /**
      * <code>string company = 8;</code>
      * @return The company.
@@ -787,7 +660,8 @@ public final class TokenOuterClass {
     }
 
     public static final int EMAIL_FIELD_NUMBER = 9;
-    private volatile java.lang.Object email_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object email_ = "";
     /**
      * <code>string email = 9;</code>
      * @return The email.
@@ -825,7 +699,8 @@ public final class TokenOuterClass {
     }
 
     public static final int TELEPHONE_FIELD_NUMBER = 10;
-    private volatile java.lang.Object telephone_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object telephone_ = "";
     /**
      * <code>string telephone = 10;</code>
      * @return The telephone.
@@ -863,7 +738,8 @@ public final class TokenOuterClass {
     }
 
     public static final int ASSOCIATION_FIELD_NUMBER = 11;
-    private volatile java.lang.Object association_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object association_ = "";
     /**
      * <code>string association = 11;</code>
      * @return The association.
@@ -908,7 +784,7 @@ public final class TokenOuterClass {
      */
     @java.lang.Override
     public boolean hasValidUntil() {
-      return validUntil_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>.google.protobuf.Timestamp validUntil = 12;</code>
@@ -923,7 +799,7 @@ public final class TokenOuterClass {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getValidUntilOrBuilder() {
-      return getValidUntil();
+      return validUntil_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : validUntil_;
     }
 
     public static final int MEMBERSINCE_FIELD_NUMBER = 13;
@@ -934,7 +810,7 @@ public final class TokenOuterClass {
      */
     @java.lang.Override
     public boolean hasMemberSince() {
-      return memberSince_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.google.protobuf.Timestamp memberSince = 13;</code>
@@ -949,7 +825,7 @@ public final class TokenOuterClass {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getMemberSinceOrBuilder() {
-      return getMemberSince();
+      return memberSince_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : memberSince_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -999,13 +875,13 @@ public final class TokenOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(association_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, association_);
       }
-      if (validUntil_ != null) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(12, getValidUntil());
       }
-      if (memberSince_ != null) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(13, getMemberSince());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1048,15 +924,15 @@ public final class TokenOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(association_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, association_);
       }
-      if (validUntil_ != null) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getValidUntil());
       }
-      if (memberSince_ != null) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getMemberSince());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1102,7 +978,7 @@ public final class TokenOuterClass {
         if (!getMemberSince()
             .equals(other.getMemberSince())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1143,7 +1019,7 @@ public final class TokenOuterClass {
         hash = (37 * hash) + MEMBERSINCE_FIELD_NUMBER;
         hash = (53 * hash) + getMemberSince().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1192,11 +1068,13 @@ public final class TokenOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
+
     public static com.passulo.TokenOuterClass.Token parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
+
     public static com.passulo.TokenOuterClass.Token parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1271,43 +1149,33 @@ public final class TokenOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getValidUntilFieldBuilder();
+          getMemberSinceFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
         firstName_ = "";
-
         middleName_ = "";
-
         lastName_ = "";
-
         gender_ = 0;
-
         number_ = "";
-
         status_ = "";
-
         company_ = "";
-
         email_ = "";
-
         telephone_ = "";
-
         association_ = "";
-
-        if (validUntilBuilder_ == null) {
-          validUntil_ = null;
-        } else {
-          validUntil_ = null;
+        validUntil_ = null;
+        if (validUntilBuilder_ != null) {
+          validUntilBuilder_.dispose();
           validUntilBuilder_ = null;
         }
-        if (memberSinceBuilder_ == null) {
-          memberSince_ = null;
-        } else {
-          memberSince_ = null;
+        memberSince_ = null;
+        if (memberSinceBuilder_ != null) {
+          memberSinceBuilder_.dispose();
           memberSinceBuilder_ = null;
         }
         return this;
@@ -1336,29 +1204,60 @@ public final class TokenOuterClass {
       @java.lang.Override
       public com.passulo.TokenOuterClass.Token buildPartial() {
         com.passulo.TokenOuterClass.Token result = new com.passulo.TokenOuterClass.Token(this);
-        result.id_ = id_;
-        result.firstName_ = firstName_;
-        result.middleName_ = middleName_;
-        result.lastName_ = lastName_;
-        result.gender_ = gender_;
-        result.number_ = number_;
-        result.status_ = status_;
-        result.company_ = company_;
-        result.email_ = email_;
-        result.telephone_ = telephone_;
-        result.association_ = association_;
-        if (validUntilBuilder_ == null) {
-          result.validUntil_ = validUntil_;
-        } else {
-          result.validUntil_ = validUntilBuilder_.build();
-        }
-        if (memberSinceBuilder_ == null) {
-          result.memberSince_ = memberSince_;
-        } else {
-          result.memberSince_ = memberSinceBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.passulo.TokenOuterClass.Token result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.firstName_ = firstName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.middleName_ = middleName_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.lastName_ = lastName_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.gender_ = gender_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.number_ = number_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.company_ = company_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.email_ = email_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.telephone_ = telephone_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.association_ = association_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.validUntil_ = validUntilBuilder_ == null
+              ? validUntil_
+              : validUntilBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.memberSince_ = memberSinceBuilder_ == null
+              ? memberSince_
+              : memberSinceBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1407,18 +1306,22 @@ public final class TokenOuterClass {
         if (other == com.passulo.TokenOuterClass.Token.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getFirstName().isEmpty()) {
           firstName_ = other.firstName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getMiddleName().isEmpty()) {
           middleName_ = other.middleName_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getLastName().isEmpty()) {
           lastName_ = other.lastName_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.gender_ != 0) {
@@ -1426,26 +1329,32 @@ public final class TokenOuterClass {
         }
         if (!other.getNumber().isEmpty()) {
           number_ = other.number_;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getStatus().isEmpty()) {
           status_ = other.status_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (!other.getCompany().isEmpty()) {
           company_ = other.company_;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         if (!other.getEmail().isEmpty()) {
           email_ = other.email_;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         if (!other.getTelephone().isEmpty()) {
           telephone_ = other.telephone_;
+          bitField0_ |= 0x00000200;
           onChanged();
         }
         if (!other.getAssociation().isEmpty()) {
           association_ = other.association_;
+          bitField0_ |= 0x00000400;
           onChanged();
         }
         if (other.hasValidUntil()) {
@@ -1454,7 +1363,7 @@ public final class TokenOuterClass {
         if (other.hasMemberSince()) {
           mergeMemberSince(other.getMemberSince());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1469,19 +1378,102 @@ public final class TokenOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.passulo.TokenOuterClass.Token parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                firstName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                middleName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                lastName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 40: {
+                gender_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 50: {
+                number_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 58: {
+                status_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              case 66: {
+                company_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 74: {
+                email_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+              case 82: {
+                telephone_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+              case 90: {
+                association_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+              case 98: {
+                input.readMessage(
+                    getValidUntilFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              case 106: {
+                input.readMessage(
+                    getMemberSinceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.passulo.TokenOuterClass.Token) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -1536,11 +1528,9 @@ public final class TokenOuterClass {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1553,8 +1543,8 @@ public final class TokenOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1569,12 +1559,10 @@ public final class TokenOuterClass {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1620,11 +1608,9 @@ public final class TokenOuterClass {
        */
       public Builder setFirstName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         firstName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1633,8 +1619,8 @@ public final class TokenOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFirstName() {
-        
         firstName_ = getDefaultInstance().getFirstName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1645,12 +1631,10 @@ public final class TokenOuterClass {
        */
       public Builder setFirstNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         firstName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1696,11 +1680,9 @@ public final class TokenOuterClass {
        */
       public Builder setMiddleName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         middleName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1709,8 +1691,8 @@ public final class TokenOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMiddleName() {
-        
         middleName_ = getDefaultInstance().getMiddleName();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1721,12 +1703,10 @@ public final class TokenOuterClass {
        */
       public Builder setMiddleNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         middleName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1772,11 +1752,9 @@ public final class TokenOuterClass {
        */
       public Builder setLastName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         lastName_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1785,8 +1763,8 @@ public final class TokenOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastName() {
-        
         lastName_ = getDefaultInstance().getLastName();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1797,12 +1775,10 @@ public final class TokenOuterClass {
        */
       public Builder setLastNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         lastName_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1821,8 +1797,8 @@ public final class TokenOuterClass {
        * @return This builder for chaining.
        */
       public Builder setGenderValue(int value) {
-        
         gender_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1832,8 +1808,7 @@ public final class TokenOuterClass {
        */
       @java.lang.Override
       public com.passulo.TokenOuterClass.Token.Gender getGender() {
-        @SuppressWarnings("deprecation")
-        com.passulo.TokenOuterClass.Token.Gender result = com.passulo.TokenOuterClass.Token.Gender.valueOf(gender_);
+        com.passulo.TokenOuterClass.Token.Gender result = com.passulo.TokenOuterClass.Token.Gender.forNumber(gender_);
         return result == null ? com.passulo.TokenOuterClass.Token.Gender.UNRECOGNIZED : result;
       }
       /**
@@ -1845,7 +1820,7 @@ public final class TokenOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000010;
         gender_ = value.getNumber();
         onChanged();
         return this;
@@ -1855,7 +1830,7 @@ public final class TokenOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGender() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         gender_ = 0;
         onChanged();
         return this;
@@ -1902,11 +1877,9 @@ public final class TokenOuterClass {
        */
       public Builder setNumber(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         number_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1915,8 +1888,8 @@ public final class TokenOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNumber() {
-        
         number_ = getDefaultInstance().getNumber();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1927,12 +1900,10 @@ public final class TokenOuterClass {
        */
       public Builder setNumberBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         number_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1978,11 +1949,9 @@ public final class TokenOuterClass {
        */
       public Builder setStatus(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         status_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1991,8 +1960,8 @@ public final class TokenOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
-        
         status_ = getDefaultInstance().getStatus();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -2003,12 +1972,10 @@ public final class TokenOuterClass {
        */
       public Builder setStatusBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         status_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2054,11 +2021,9 @@ public final class TokenOuterClass {
        */
       public Builder setCompany(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         company_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2067,8 +2032,8 @@ public final class TokenOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCompany() {
-        
         company_ = getDefaultInstance().getCompany();
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -2079,12 +2044,10 @@ public final class TokenOuterClass {
        */
       public Builder setCompanyBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         company_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2130,11 +2093,9 @@ public final class TokenOuterClass {
        */
       public Builder setEmail(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         email_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2143,8 +2104,8 @@ public final class TokenOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEmail() {
-        
         email_ = getDefaultInstance().getEmail();
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }
@@ -2155,12 +2116,10 @@ public final class TokenOuterClass {
        */
       public Builder setEmailBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         email_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2206,11 +2165,9 @@ public final class TokenOuterClass {
        */
       public Builder setTelephone(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         telephone_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2219,8 +2176,8 @@ public final class TokenOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTelephone() {
-        
         telephone_ = getDefaultInstance().getTelephone();
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
@@ -2231,12 +2188,10 @@ public final class TokenOuterClass {
        */
       public Builder setTelephoneBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         telephone_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2282,11 +2237,9 @@ public final class TokenOuterClass {
        */
       public Builder setAssociation(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         association_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -2295,8 +2248,8 @@ public final class TokenOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAssociation() {
-        
         association_ = getDefaultInstance().getAssociation();
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
@@ -2307,12 +2260,10 @@ public final class TokenOuterClass {
        */
       public Builder setAssociationBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         association_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -2325,7 +2276,7 @@ public final class TokenOuterClass {
        * @return Whether the validUntil field is set.
        */
       public boolean hasValidUntil() {
-        return validUntilBuilder_ != null || validUntil_ != null;
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
        * <code>.google.protobuf.Timestamp validUntil = 12;</code>
@@ -2347,11 +2298,11 @@ public final class TokenOuterClass {
             throw new NullPointerException();
           }
           validUntil_ = value;
-          onChanged();
         } else {
           validUntilBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000800;
+        onChanged();
         return this;
       }
       /**
@@ -2361,11 +2312,11 @@ public final class TokenOuterClass {
           com.google.protobuf.Timestamp.Builder builderForValue) {
         if (validUntilBuilder_ == null) {
           validUntil_ = builderForValue.build();
-          onChanged();
         } else {
           validUntilBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000800;
+        onChanged();
         return this;
       }
       /**
@@ -2373,38 +2324,40 @@ public final class TokenOuterClass {
        */
       public Builder mergeValidUntil(com.google.protobuf.Timestamp value) {
         if (validUntilBuilder_ == null) {
-          if (validUntil_ != null) {
-            validUntil_ =
-              com.google.protobuf.Timestamp.newBuilder(validUntil_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000800) != 0) &&
+            validUntil_ != null &&
+            validUntil_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getValidUntilBuilder().mergeFrom(value);
           } else {
             validUntil_ = value;
           }
-          onChanged();
         } else {
           validUntilBuilder_.mergeFrom(value);
         }
-
+        if (validUntil_ != null) {
+          bitField0_ |= 0x00000800;
+          onChanged();
+        }
         return this;
       }
       /**
        * <code>.google.protobuf.Timestamp validUntil = 12;</code>
        */
       public Builder clearValidUntil() {
-        if (validUntilBuilder_ == null) {
-          validUntil_ = null;
-          onChanged();
-        } else {
-          validUntil_ = null;
+        bitField0_ = (bitField0_ & ~0x00000800);
+        validUntil_ = null;
+        if (validUntilBuilder_ != null) {
+          validUntilBuilder_.dispose();
           validUntilBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.google.protobuf.Timestamp validUntil = 12;</code>
        */
       public com.google.protobuf.Timestamp.Builder getValidUntilBuilder() {
-        
+        bitField0_ |= 0x00000800;
         onChanged();
         return getValidUntilFieldBuilder().getBuilder();
       }
@@ -2444,7 +2397,7 @@ public final class TokenOuterClass {
        * @return Whether the memberSince field is set.
        */
       public boolean hasMemberSince() {
-        return memberSinceBuilder_ != null || memberSince_ != null;
+        return ((bitField0_ & 0x00001000) != 0);
       }
       /**
        * <code>.google.protobuf.Timestamp memberSince = 13;</code>
@@ -2466,11 +2419,11 @@ public final class TokenOuterClass {
             throw new NullPointerException();
           }
           memberSince_ = value;
-          onChanged();
         } else {
           memberSinceBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00001000;
+        onChanged();
         return this;
       }
       /**
@@ -2480,11 +2433,11 @@ public final class TokenOuterClass {
           com.google.protobuf.Timestamp.Builder builderForValue) {
         if (memberSinceBuilder_ == null) {
           memberSince_ = builderForValue.build();
-          onChanged();
         } else {
           memberSinceBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00001000;
+        onChanged();
         return this;
       }
       /**
@@ -2492,38 +2445,40 @@ public final class TokenOuterClass {
        */
       public Builder mergeMemberSince(com.google.protobuf.Timestamp value) {
         if (memberSinceBuilder_ == null) {
-          if (memberSince_ != null) {
-            memberSince_ =
-              com.google.protobuf.Timestamp.newBuilder(memberSince_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00001000) != 0) &&
+            memberSince_ != null &&
+            memberSince_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getMemberSinceBuilder().mergeFrom(value);
           } else {
             memberSince_ = value;
           }
-          onChanged();
         } else {
           memberSinceBuilder_.mergeFrom(value);
         }
-
+        if (memberSince_ != null) {
+          bitField0_ |= 0x00001000;
+          onChanged();
+        }
         return this;
       }
       /**
        * <code>.google.protobuf.Timestamp memberSince = 13;</code>
        */
       public Builder clearMemberSince() {
-        if (memberSinceBuilder_ == null) {
-          memberSince_ = null;
-          onChanged();
-        } else {
-          memberSince_ = null;
+        bitField0_ = (bitField0_ & ~0x00001000);
+        memberSince_ = null;
+        if (memberSinceBuilder_ != null) {
+          memberSinceBuilder_.dispose();
           memberSinceBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.google.protobuf.Timestamp memberSince = 13;</code>
        */
       public com.google.protobuf.Timestamp.Builder getMemberSinceBuilder() {
-        
+        bitField0_ |= 0x00001000;
         onChanged();
         return getMemberSinceFieldBuilder().getBuilder();
       }
@@ -2587,7 +2542,18 @@ public final class TokenOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Token(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
